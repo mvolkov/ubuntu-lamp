@@ -11,17 +11,16 @@
 
 - name: CLC | Build LAMP Server if Needed
   clc_server:
-    name: "{{ server_name }}"
-    location: "{{ datacenter }}"
-    template: "{{ os_template }}"
+    name: www
+    location: UC1
+    template: ubuntu-16-64
     password: "{{ serverpass.stdout }}"
-    exact_count: "{{ server_count }}"
-    group: "{{ group_name }}"
-    count_group: "{{ group_name }}"
-    cpu: "{{ cpu }}"
-    memory: "{{ memory }}"
-    type: "{{ type }}"
-    storage_type: "{{ storage_type }}"
+    exact_count: 3
+    group: WWW
+    count_group: WWW
+    cpu: 1
+    memory: 1
+    storage_type: standard
   register: apache
 
 - name: CLC | Add public ipaddress
