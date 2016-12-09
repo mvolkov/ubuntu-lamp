@@ -1,0 +1,11 @@
+group_size: 1
+type: standard
+storage_type: standard
+cpu: 1
+memory: 2
+server_count: 1
+datacenter: 'UC1'
+group_name:  WWW
+server_name: WEB
+os_template: ubuntu-16-64
+public: true

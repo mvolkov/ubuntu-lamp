@@ -1,0 +1,31 @@
+---
+- name: Create apache group
+  group:
+    name: www-data
+
+- name: Create apache user
+  user:
+    name: www-data
+
+- name: Install apache
+  apt:
+    name: apache2
+
+- name: Set apache config
+  template:
+    src: apache2.conf.j2
+    dest: /etc/apache2/apache2.conf
+    owner: "{{ apache_owner }}"
+    group: "{{ apache_group }}"
+
+- name: Get backend group information
+  clc_server_fact:
+    server_id: "{{ item }}"
+  with_items:
+    - "{{ backend }}"
+  register: backend_servers
+
+- name: Start / enable apache
+  service:
+    name: apache2
+    state: started

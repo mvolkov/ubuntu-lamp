@@ -1,0 +1,6 @@
+---
+- name: Build LAMP Server
+  hosts: localhost
+  connection: local
+  roles:
+     - build_server
