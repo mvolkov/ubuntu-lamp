@@ -1,5 +1,5 @@
 ### Apache
-Create an Apache server to proxy traffic to backend applications in the Centurylink Cloud
+Create an Apache server as part of Runner training in the Centurylink Cloud
 
 ### Description
 This playbook will provision an Ubuntu server, install apache, and place a configuration to proxy traffic to a backend group of your choosing. The high level tasks are:
