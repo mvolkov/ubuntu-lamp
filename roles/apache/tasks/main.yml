@@ -9,14 +9,7 @@
 
 - name: Install apache
   apt:
-    name: apache2
-
-- name: Set apache config
-  template:
-    src: apache2.conf.j2
-    dest: /etc/apache2/apache2.conf
-    owner: "{{ apache_owner }}"
-    group: "{{ apache_group }}"
+    name: apache2 update_cache-yes state-latest
 
 - name: Get backend group information
   clc_server_fact:
